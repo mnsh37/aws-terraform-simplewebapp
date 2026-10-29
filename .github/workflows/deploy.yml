@@ -34,7 +34,7 @@ jobs:
         run: echo "PROD_IP=$(terraform output -raw server_public_ip)" >> $GITHUB_ENV
 
       - name: Wait for EC2 to boot
-        run: sleep 30 # Gives the new server time to start up and run the Nginx install script
+        run: sleep 120 # Gives the new server time to start up and run the Nginx install script
 
       - name: Deploy Web App via SSH
         uses: appleboy/scp-action@v0.1.7
