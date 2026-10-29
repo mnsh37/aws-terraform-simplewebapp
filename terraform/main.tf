@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "my-terraform-state-bucket-243234"
+    key    = "prod/terraform.tfstate"
+    region = "ap-south-1"
+  }
+}
+
 provider "aws" {
   region = "us-east-1" # Change this if your AWS console is using a different region
 }
